@@ -18,7 +18,7 @@ router.get('/person', (req, res) => {
         }
 
         var db = client.db("Abu");
-        db.collection("sahithyolsav").find({}).toArray(function (err, result) {
+        db.collection("sahithyolsav").find({}).sort({Score:-1}).toArray(function (err, result) {
             result=result;
             client.close();
             res.send(result);
